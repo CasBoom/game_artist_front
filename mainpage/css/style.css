@@ -22,7 +22,6 @@ body {
 .profile {
 	margin-top: 20px;
 	display: inline-block;
-	margin-left: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
 	text-align: center;
@@ -55,4 +54,18 @@ body {
     height: 300px;
     float: left;
     padding-bottom: 10px;
+}
+
+.upload-btn {
+    width: 30%;
+    height: 50px;
+    background-color: black;
+    border: 1px solid  black;
+    color: white;
+    font-size: 15px;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: white;
 }
