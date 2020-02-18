@@ -1,0 +1,220 @@
+@charset "UTF-8";
+#uploadFileMenuContainerDescription{
+  display: none;
+}
+#uploadFileMenuContainerOptions{
+  display: none;
+}
+#uploadFileMenuContainerAdvanced{
+  display: none;
+}
+.containerUpload{
+  background-color: #FFFFFF;
+  height: 100vh;
+  max-height: 100vh;
+}
+.popupHeader{
+  height: 60px;
+  width: 100%;
+  border-bottom: solid 2px #EEEEEE;
+  position: fixed;
+  background-color: #FFFFFF;
+  z-index: 2;
+}
+.popupGrid{
+  display: grid;
+  grid-template-columns: 2.4fr 0.6fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "popup-titles popup-buttons";
+}
+.popupTitle{
+  grid-area: popup-titles;
+}
+.popupTitle .title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+  margin-top: 13px;
+  color: #323232;
+}
+.popupButtons{
+  grid-area: popup-buttons;
+}
+.popupButtons .popupCloseButton{
+  width: 100%;
+  height: 60px;
+  font-size: 1.6em;
+  color: #323232;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+/*
+=== Popup Content
+*/
+.popupContent .uploadFileMenu{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "fileDescription fileOptions fileAdvanced";
+  position: fixed;
+  width: 100%;
+  margin-top: 62px;
+  background-color: #FFFFFF;
+  z-index: 2;
+}
+.popupContent .uploadFileMenu .uploadFileMenuButton{
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  padding-top: 0px;
+  font-weight: bold;
+  color: #AFAFAF;
+  font-family: 'Open Sans', sans-serif;
+}
+.popupContent .uploadFileMenu .active{
+  background-color: #FAFAFA;
+  color: #323232;
+}
+.popupContent .uploadFileMenu .fileOptions{
+  grid-area: fileOptions;
+}
+.popupContent .uploadFileMenu .fileDescription{
+  grid-area: fileDescription;
+}
+.popupContent .uploadFileMenu .fileAdvanced{
+  grid-area: fileAdvanced;
+}
+.popupContent .uploadFileMenuContainer{
+  width: 100%;
+  height: 280px;
+  position: fixed;
+  background-color: #FAFAFA;
+  z-index: 2;
+  margin-top: 102px;
+  border-bottom: solid 2px #EEEEEE;
+}
+.popupContent .uploadFileMenuContainer .inputGroup .inputTitle{
+  color: #ACACAC;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.popupContent .uploadFileMenuContainer .inputGroup .inputBox{
+  width: 100%;
+  height: 30px;
+  margin-top: -10px;
+  border: solid 2px #EEEEEE;
+  border-radius: 4px;
+  padding-left: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+.popupContent .uploadFileMenuContainer .inputGroup .inputTextArea{
+  width: 100%;
+  border: solid 2px #EEEEEE;
+  border-radius: 4px;
+  margin-top: -10px;
+  font-family: 'Open Sans', sans-serif;
+}
+.popupContent .uploadFileContainer{
+  width: 100%;
+  height: auto;
+}
+.popupContent .uploadFileContainer .uploadFileButton{
+  height: 60px;
+  border-top: solid 2px #428FEB;
+  border-bottom: solid 2px #428FEB;
+  background-color: #1473E6;
+  position: fixed;
+  /*
+    TODO:
+    Menu Open: Margin-top: 382px;
+    Menu Closed: Margin-top: 102px;
+  */
+  margin-top: 382px;
+  width: 100%;
+  z-index: 2;
+}
+.popupContent .uploadFileContainer .uploadFileButton button{
+  height: 60px;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  color: #FFFFFF;
+  border: none;
+  background-color: transparent;
+}
+.popupContent .uploadFileContainer .containerUploadedFiles{
+  padding-top: 162px;
+  position: relative;
+}
+.popupContent .uploadFileContainer .uploadedFile{
+  height: 80px;
+  border-bottom: solid 2px #EEEEEE;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 0.6fr 1.8fr 0.6fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "fileTypeIcon progress progressIcon";
+}
+.progress{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "fileName" "fileProgress";
+  grid-area: progress;
+}
+.fileName{
+  grid-area: fileName;
+  font-size: 1em;
+  height: 40px;
+  padding-left: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+.fileProgress{
+  grid-area: fileProgress;
+  padding-left: 5px;
+}
+.fileTypeIcon{
+  grid-area: fileTypeIcon;
+  font-size: 3.5em;
+  padding-top: 7px;
+  text-align: center;
+  color: #323232;
+}
+.progressIcon{
+  grid-area: progressIcon;
+  font-size: 1.6em;
+  text-align: center;
+  padding-top: 26px;
+  color: #323232;
+}
+@media screen and (min-width: 992px) {
+  .containerUpload{
+    background-color: #FFFFFF;
+    height: 80vh;
+  }
+  .popupHeader{
+    width: 100%;
+    position: relative;
+  }
+  .popupContent .uploadFileMenu{
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+  }
+  .popupContent .uploadFileMenuContainer{
+    position: relative;
+    width: 100%;
+    margin-top: -13px;
+  }
+  .popupContent .uploadFileContainer .uploadFileButton{
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+  }
+  .popupContent .uploadFileContainer .containerUploadedFiles{
+    padding-top: 0px;
+    position: relative;
+  }
+}
