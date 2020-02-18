@@ -1,3 +1,9 @@
+<?php
+  include('utils/api_connect.php');
+  if(!$valid){
+    header('Location: login.php');
+  }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
