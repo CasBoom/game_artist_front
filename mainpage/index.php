@@ -1,7 +1,7 @@
 <?php
   include_once('utils/api_connect.php');
   if(!$valid){
-    header('Location: login.php');
+    // header('Location: login.php');
   }
 ?>
 <html lang="en">
