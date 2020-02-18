@@ -181,9 +181,8 @@ body{
   body{
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: fill;
     height: 100vh;
-    overflow: hidden;
   }
   .app{
     background-color: transparent;
