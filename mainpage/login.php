@@ -1,0 +1,110 @@
+<?php
+  SESSION_START();
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Vendor Scripts -->
+
+    <!-- -->
+    <!-- Vendor CSS-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- -->
+    <!-- CSS -->
+      <link rel="stylesheet" href="src/css/master.css">
+      <link rel="stylesheet" href="src/css/login.css">
+    <!-- -->
+  </head>
+  </head>
+  <body style="background-image: url('src/assets/img/login-background.jpg');">
+    <div id="app" class="app">
+      <div class="containerMain">
+        <div class="panel">
+          <div id="landingsPage" class="landingsPage">
+            <div class="titles">
+              <h1 class="title">Portfolio's</h1>
+              <p class="subTitle">Mediavormgever: Game Artist</p>
+            </div>
+            <div class="buttons">
+              <button onclick="openLoginFromLanding()" class="button" type="button" name="button">Get Started</button>
+            </div>
+          </div>
+          <div id="loginPage" class="loginPage">
+            <div class="titles">
+              <h2 class="title">Welkom terug!</h2>
+              <p class="subTitle">Aanmelden</p>
+            </div>
+            <div class="loginContainers">
+              <form class="loginForm">
+                <div class="formGroup">
+                  <p class="inputTitle">Studentennummer</p>
+                  <input class="inputBox" type="text" name="" value="" name="loginStudentNumber">
+                </div>
+                <div class="formGroup">
+                  <p class="inputTitle">Wachtwoord</p>
+                  <input class="inputBox" type="password" name="" value="" name="loginPassword">
+                </div>
+                <div class="formGroup stayLoggedIn">
+                  <p class="formText">Nieuwe gebruiker? <a onclick="openRegister()">Maak een account aan.</a></p>
+                </div>
+                <div class="buttons">
+                  <button class="button" type="button" name="button">Doorgaan</button>
+                </div>
+              </form>
+              <hr class="loginContainersDivider">
+              <div class="subLoginContainers">
+                <a href="#">Wachtwoord opnieuw instellen</a>
+                <p>Beveiligd met reCAPTCHA en onder voorbehoud van het <a href="#">privacybeleid</a> en de <a href="#">gebruikersvoorwaarden</a> van Google.</p>
+              </div>
+            </div>
+          </div>
+          <div id="registerPage" class="registerPage">
+            <div class="titles">
+              <h2 class="title">Welkom!</h2>
+              <p class="subTitle">Maak een account</p>
+            </div>
+            <div class="LoginContainers">
+              <form class="loginForm">
+                <div class="formGroup">
+                  <p class="inputTitle">E-mailadres</p>
+                  <input class="inputBox" type="text" name="" value="" name="loginStudentNumber">
+                </div>
+                <div class="formGroup">
+                  <p class="inputTitle">Voornaam</p>
+                  <input class="inputBox" type="text" name="" value="" name="loginPassword">
+                </div>
+                <div class="formGroup">
+                  <p class="inputTitle">Achternaam</p>
+                  <input class="inputBox" type="text" name="" value="" name="loginPassword">
+                </div>
+                <div class="formGroup">
+                  <p class="inputTitle">Wachtwoord</p>
+                  <input class="inputBox" type="password" name="" value="" name="loginPassword">
+                </div>
+                <div class="formGroup">
+                  <p class="inputTitle">Wachtwoord bevestigen</p>
+                  <input class="inputBox" type="password" name="" value="" name="loginPassword">
+                </div>
+                <p class="formText">Hebt u al een account? <a onclick="openLogin()">Aanmelden</a></p>
+                <p class="formText">Door te klikken op 'Account maken', geef ik aan dat ik het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="https://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> heb gelezen en ermee akkoord ga.</p>
+                <div class="buttons">
+                  <button class="button" type="button" name="button">Account maken</button>
+                </div>
+              </form>
+              <hr class="loginContainersDivider">
+              <div class="subLoginContainers">
+                <p>Beveiligd met reCAPTCHA en onder voorbehoud van het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="https://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> van Google.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Scripts -->
+    <script src="src/js/login.js"></script>
+  <!-- -->
+</html>

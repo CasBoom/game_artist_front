@@ -1,0 +1,207 @@
+@charset "UTF-8";
+body{
+  background-size: none;
+  height: 100vh;
+}
+/* ===
+  Private Settings
+=== */
+.titles{
+  text-align: center;
+}
+.titles .title{
+  font-family: 'Open Sans', sans-serif;
+  color: #323232;
+  font-size: 1.8em;
+}
+.titles .subTitle{
+  margin-top: -20px;
+  font-family: 'Open Sans', sans-serif;
+  color: #505050;
+}
+.buttons .button{
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  background-color: #1473E6;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.buttons .button:hover{
+  cursor: pointer;
+}
+/* ===
+  App and Panel
+=== */
+.app{
+  background-color: #FFFFFF;
+}
+.panel{
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #FFFFFF;
+  padding-bottom: 20px;
+  min-height: 100vh;
+}
+/* ===
+  Landings Page Titles
+=== */
+#landingsPage{
+  display: block;
+}
+.landingsPage .titles{
+  padding-top: 80px;
+}
+.landingsPage .titles .title{
+  font-family: 'Open Sans', sans-serif;
+  color: #323232;
+}
+.landingsPage .titles .subTitle{
+  margin-top: -20px;
+  font-family: 'Open Sans', sans-serif;
+  color: #505050;
+}
+.landingsPage .buttons{
+  margin-top: 200px;
+}
+/* ===
+  Login and Register Page
+=== */
+#loginPage{
+  display: none;
+}
+#registerPage{
+  display: none;
+}
+.loginPage .titles{
+  padding-top: 80px;
+}
+.registerPage .titles{
+  padding-top: 10px;
+}
+.loginForm .formText{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+}
+.loginForm .formText a{
+  text-decoration: none;
+  color: #1473E6;
+}
+.loginForm .formText a:hover{
+  cursor: pointer;
+}
+.loginForm .formGroup .inputTitle{
+  font-family: 'Open Sans', sans-serif;
+  color: #505050;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+.loginForm .formGroup .inputBox{
+  width: 100%;
+  height: 40px;
+  border: solid 1px #EEEEEE;
+  padding-left: 5px;
+}
+.loginForm .formGroup .switch{
+  width: 60px;
+  height: 34px;
+}
+.loginForm .formGroup .switch:focus{
+  outline: none;
+}
+.loginForm .formGroup .switch .switchInput{
+  opacity: 0;
+  width: 60px;
+  height: 34px;
+}
+.loginForm .formGroup .switch .slider{
+  position: absolute;
+  cursor: pointer;
+  background-color: #CCCCCC;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 40px;
+  height: 22px;
+  left: 5%;
+  margin-top: 10px;
+}
+.loginForm .formGroup .switch .slider:before{
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.loginForm .formGroup .switch .switchInput:checked + .slider {
+  background-color: #1473E6;
+}
+.loginForm .formGroup .switch .switchInput:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+.loginForm .formGroup .slider.round {
+  border-radius: 34px;
+}
+.loginForm .formGroup .slider.round:before {
+  border-radius: 50%;
+}
+.loginForm .stayLoggedIn .inputTitle{
+  margin-top: -30px;
+  margin-left: 50px;
+}
+.loginForm .buttons{
+  margin-top: 20px;
+}
+.loginContainersDivider{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: solid 1px #EEEEEE;
+}
+.subLoginContainers{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+}
+.subLoginContainers a{
+  color: #1473E6;
+  text-decoration: none;
+}
+.subLoginContainers p{
+  color: #BCBCBC;
+}
+@media screen and (min-width: 992px) {
+  body{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: fill;
+    height: 100vh;
+  }
+  .app{
+    background-color: transparent;
+    height: 100vh;
+  }
+  .panel{
+    height: auto;
+    min-height: auto;
+    width: 500px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-top: 100px;
+    border: solid 1px #EEEEEE;
+    border-radius: 12px;
+  }
+  .loginPage .titles{
+    padding-top: 10px;
+  }
+  .loginForm .formGroup .switch .slider{
+    left: 6%;
+  }
+}
