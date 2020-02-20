@@ -1,9 +1,3 @@
-<?php
-  include('utils/api_connect.php');
-  if(!$valid){
-    header('Location: login.php');
-  }
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,8 +18,8 @@
           <p class="main">Name</p><p class="after_main">Jeremy</p>
           <p class="main">Username</p><p class="after_main">Jeremyrose1</p>
           <p class="main">Klas</p><p class="after_main">2MD2</p>
+          <button type="button" class="upload-btn" ><a class="btn-link" href="../upload/index.html">Upload project</a></button>
         </div>
-        <button type="button" class="upload-btn" ><a class="btn-link" href="../upload/index.html">Upload project</a></button>
     </div>
 
     
