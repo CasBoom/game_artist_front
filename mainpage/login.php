@@ -1,3 +1,6 @@
+<?php
+  SESSION_START();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

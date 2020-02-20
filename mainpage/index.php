@@ -1,7 +1,8 @@
 <?php
-  include_once('utils/api_connect.php');
-  if(!$valid){
-    // header('Location: login.php');
+  SESSION_START();
+  include('utils/api_connect.php');
+  if(!$_SESSION['token']){
+    header('Location: login.php');
   }
 ?>
 <html lang="en">
@@ -15,7 +16,9 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="js/animation.js"></script>
+    <!-- <script src="js/animation.js"></script> -->
+    <script src="src/js/jquery.js"></script>
+
 
     <div class="header">
         <div class="profile">
