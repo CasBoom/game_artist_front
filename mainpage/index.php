@@ -1,6 +1,6 @@
 <?php
   include('utils/api_connect.php');
-  if(!$valid){
+  if(!$_SESSION['token']){
     header('Location: login.php');
   }
 ?>

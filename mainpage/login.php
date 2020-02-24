@@ -38,20 +38,20 @@
               <p class="subTitle">Aanmelden</p>
             </div>
             <div class="loginContainers">
-              <form class="loginForm">
+              <form class="loginForm" method="post" action="index.php">
                 <div class="formGroup">
                   <p class="inputTitle">Studentennummer</p>
-                  <input class="inputBox" type="text" name="" value="" name="loginStudentNumber">
+                  <input class="inputBox" type="text" name="username" value="" name="loginStudentNumber">
                 </div>
                 <div class="formGroup">
                   <p class="inputTitle">Wachtwoord</p>
-                  <input class="inputBox" type="password" name="" value="" name="loginPassword">
+                  <input class="inputBox" type="password" name="password" value="" name="loginPassword">
                 </div>
                 <div class="formGroup stayLoggedIn">
                   <p class="formText">Nieuwe gebruiker? <a onclick="openRegister()">Maak een account aan.</a></p>
                 </div>
                 <div class="buttons">
-                  <button class="button" type="button" name="button">Doorgaan</button>
+                  <input type="submit" class="button" type="button" name="button" value="Doorgaan">
                 </div>
               </form>
               <hr class="loginContainersDivider">
