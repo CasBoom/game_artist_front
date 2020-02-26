@@ -3,6 +3,17 @@
   if(!$_SESSION['token']){
     header('Location: login.php');
   }
+  $user = $api['user_info'];
+  $articles = $api['articles'];
+
+  function select_item_first($array, $item, $string){
+    foreach($array as $field){
+      if(isset($field[$item])){
+        return $field[$string];
+      }
+    }
+    return "";
+  }
 ?>
 
 <html lang="en">
@@ -23,58 +34,26 @@
     <div class="header">
         <div class="profile">
           <img src="https://www.pngkey.com/png/detail/157-1579943_no-profile-picture-round.png" alt="profile_picture" width="300px" height="300px">
-          <h1 class="main_name">Jeremy Rose</h1>
-          <p class="main">Name</p><p class="after_main">Jeremy</p>
-          <p class="main">Username</p><p class="after_main">Jeremyrose1</p>
-          <p class="main">Klas</p><p class="after_main">2MD2</p>
-          <button type="button" class="upload-btn" ><a class="btn-link" href="../upload/index.html">Upload project</a></button>
+          <h1 class="main_name"><?php echo $user['name']; ?></h1>
+          <p class="main">Username</p><p class="after_main"><?php echo $user['username']; ?></p>
+          <p class="main">Klas</p><p class="after_main"><?php echo $user['class']; ?></p>
+          <button type="button" class="upload-btn" ><a class="btn-link" href="../upload/index.php">Upload project</a></button>
         </div>
     </div>
 
     
     <div class="container">
-
       <div class="gallery">
-
-        <div class="imagegallery-img">
-          <a href="#" data-toggle="galleryModal">
-            <img src="https://via.placeholder.com/300.png/09f/fff" alt="Photo by Caleb George" />
-          </a>
-        </div>
-
-        <div class="imagegallery-img">
-          <a href="#" data-toggle="galleryModal">
-            <img src="https://via.placeholder.com/300.png/09f/fff" alt="Photo by Caleb George" />
-          </a>
-        </div>
-
-        <div class="imagegallery-img">
-          <a href="#" data-toggle="galleryModal">
-            <img src="https://via.placeholder.com/300.png/09f/fff" alt="Photo by Caleb George" />
-          </a>
-        </div>
-
-        <div class="imagegallery-img">
-          <a href="#" data-toggle="galleryModal">
-            <img src="https://via.placeholder.com/300.png/09f/fff" alt="Photo by Caleb George" />
-          </a>
-        </div>
-
-        <div class="imagegallery-img">
-          <a href="#" data-toggle="galleryModal">
-            <img src="https://via.placeholder.com/300.png/09f/fff" alt="Photo by Caleb George" />
-          </a>
-        </div>
-
-        <div class="imagegallery-img">
-          <a href="#" data-toggle="galleryModal">
-            <img src="https://via.placeholder.com/300.png/09f/fff" alt="Photo by Caleb George" />
-          </a>
-        </div>
-      
+      <?php
+      foreach($articles as $article){
+        echo "<div class='imagegallery-img'>
+        <a href='#' data-toggle='galleryModal'>
+          <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
+        </a>
+      </div>";
+      }
+      ?>
       </div><!-- .end Gallery wrapper -->
-    
-
     </div>
 </body>
 </html>

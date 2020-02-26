@@ -3,13 +3,22 @@ $curl = curl_init();
 if(isset($_POST['username'])&&isset($_POST['password'])){
     $auth_data = array(
         'username'   => $_POST['username'],
-        'password'      => $_POST['password']
+        'password'   => $_POST['password']
+    );
+}
+else if(isset($_POST['r_user'])&&isset($_POST['r_name'])&&isset($_POST['r_pass'])&&isset($_POST['r_class']))
+{
+    $auth_data = array(
+        'r_user'   => $_POST['r_user'],
+        'r_name'   => $_POST['r_name'],
+        'r_pass'   => $_POST['r_pass'],
+        'r_class'   => $_POST['r_class']
     );
 }
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-curl_setopt($curl, CURLOPT_URL, 'http://u520230.gluweb.nl/webapi/');
+curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/?articles');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 $result = curl_exec($curl);

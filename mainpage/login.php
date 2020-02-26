@@ -67,31 +67,27 @@
               <p class="subTitle">Maak een account</p>
             </div>
             <div class="LoginContainers">
-              <form class="loginForm">
+              <form class="loginForm" method="post" action="index.php">
                 <div class="formGroup">
-                  <p class="inputTitle">E-mailadres</p>
-                  <input class="inputBox" type="text" name="" value="" name="loginStudentNumber">
+                  <p class="inputTitle">Studentennummer</p>
+                  <input class="inputBox" type="text" value="" name="r_user">
                 </div>
                 <div class="formGroup">
-                  <p class="inputTitle">Voornaam</p>
-                  <input class="inputBox" type="text" name="" value="" name="loginPassword">
+                  <p class="inputTitle">Naam</p>
+                  <input class="inputBox" type="text" value="" name="r_name">
                 </div>
                 <div class="formGroup">
-                  <p class="inputTitle">Achternaam</p>
-                  <input class="inputBox" type="text" name="" value="" name="loginPassword">
+                  <p class="inputTitle">Klas</p>
+                  <input class="inputBox" type="text" value="" name="r_class">
                 </div>
                 <div class="formGroup">
                   <p class="inputTitle">Wachtwoord</p>
-                  <input class="inputBox" type="password" name="" value="" name="loginPassword">
+                  <input class="inputBox" type="password" name="" value="" name="r_pass">
                 </div>
-                <div class="formGroup">
-                  <p class="inputTitle">Wachtwoord bevestigen</p>
-                  <input class="inputBox" type="password" name="" value="" name="loginPassword">
-                </div>
-                <p class="formText">Hebt u al een account? <a onclick="openLogin()">Aanmelden</a></p>
+                <p class="formText">Heeft u al een account? <a onclick="openLogin()">Aanmelden</a></p>
                 <p class="formText">Door te klikken op 'Account maken', geef ik aan dat ik het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="https://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> heb gelezen en ermee akkoord ga.</p>
                 <div class="buttons">
-                  <button class="button" type="button" name="button">Account maken</button>
+                  <input class="button" type="submit" name="submit" value="Account maken">
                 </div>
               </form>
               <hr class="loginContainersDivider">
