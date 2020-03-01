@@ -24,7 +24,7 @@ if(!$result){
 }
 curl_close($curl);
 var_dump($api);
-$_SESSION['article_id'] = $api['article_id'];
-header('Location: upload.php');
+$article = $api['article_id'];
+header('Location: upload.php?a='.$article);
 
 ?>
