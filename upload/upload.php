@@ -56,7 +56,7 @@ SESSION_START();
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <form  enctype="multipart/form-data" class="file-upload" method="post" action="upload_image.php">
             <h1 class="title-upload-form">Upload hier je afbeeldingen</h1>
-            <input type="text" value="<?php echo $_SESSION['article_id']; ?>" name="project_id" hidden>
+            <input type="text" value="<?php echo $_GET['a']; ?>" name="project_id" hidden>
             <div class="image-upload-wrap">
                 <input required class="file-upload-input" name="image" type='file' onchange="readURL(this);" accept="image/*" />
                 <div class="drag-text">
@@ -74,10 +74,10 @@ SESSION_START();
             </div>
         </form>
 
-        <form class="text-upload" method="post" action="">
-            <input type="text" value="<?php echo $_SESSION['article_id']; ?>" name="project_id" hidden>
+        <form class="text-upload" method="post" action="upload_text.php">
+            <input type="text" value="<?php echo $_GET['a']; ?>" name="project_id" hidden>
             <div class="input-fields">
-                <input required type="text" class="text-field-upload">
+                <input required type="text" class="text-field-upload" name="text">
 
 
             </div>

@@ -41,13 +41,12 @@ if(isset($_FILES['image'])){
         {
         
         if($image = upload_file($file, $tag)){
-        echo "test";
         $curl = curl_init();
         
             $auth_data = array(
                 'token'   => $_SESSION['token'],
                 'add_to_article' => '',
-                'project_id' => $_SESSION['article_id'],
+                'project_id' => $_POST['project_id'],
                 'position' => '1',
                 'url' => $image
             );
@@ -59,6 +58,7 @@ if(isset($_FILES['image'])){
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         $result = curl_exec($curl);
+        var_dump($result);
         if(!$result){
             $_SESSION['token'] = false;
         }else{
@@ -66,7 +66,7 @@ if(isset($_FILES['image'])){
             $_SESSION['token'] = $api['user_info']['token'];
         }
         curl_close($curl);
-        header('Location: upload.php');
+        header('Location: upload.php?a='.$_POST['project_id']);
         }
     }
 }

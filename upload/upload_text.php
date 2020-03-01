@@ -26,6 +26,6 @@ if(isset($_SESSION['token']))
         $_SESSION['token'] = $api['user_info']['token'];
     }
     curl_close($curl);
-    header('Location: upload.php');
+    header('Location: upload.php?a='.$_POST['project_id']);
 }
 ?>

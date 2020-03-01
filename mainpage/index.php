@@ -11,7 +11,7 @@
   function select_item_first($array, $item, $string){
     foreach($array as $field){
       if(isset($field[$item])){
-        return $field[$string];
+        return '../upload/'.$field[$string];
       }
     }
     return "../upload/uploads/error.png";
