@@ -14,7 +14,7 @@
         return $field[$string];
       }
     }
-    return "";
+    return "../upload/uploads/error.png";
   }
 ?>
 

@@ -82,7 +82,7 @@
                 </div>
                 <div class="formGroup">
                   <p class="inputTitle">Wachtwoord</p>
-                  <input class="inputBox" type="password" name="" value="" name="r_pass">
+                  <input class="inputBox" type="password" value="" name="r_pass">
                 </div>
                 <p class="formText">Heeft u al een account? <a onclick="openLogin()">Aanmelden</a></p>
                 <p class="formText">Door te klikken op 'Account maken', geef ik aan dat ik het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="https://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> heb gelezen en ermee akkoord ga.</p>
