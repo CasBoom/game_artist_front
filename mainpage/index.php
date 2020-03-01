@@ -1,4 +1,6 @@
 <?php
+  SESSION_START();
+  $_SESSION['article_id'] = "";
   include('utils/api_connect.php');
   if(!$_SESSION['token']){
     header('Location: login.php');

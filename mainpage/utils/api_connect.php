@@ -15,6 +15,12 @@ else if(isset($_POST['r_user'])&&isset($_POST['r_name'])&&isset($_POST['r_pass']
         'r_class'   => $_POST['r_class']
     );
 }
+else if(isset($_SESSION['token']))
+{
+    $auth_data = array(
+        'token'   => $_SESSION['token']
+    );
+}
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);

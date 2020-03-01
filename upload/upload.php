@@ -1,9 +1,19 @@
+<?php
+SESSION_START();
+
+  include('../mainpage/utils/api_connect.php');
+  if(!$_SESSION['token']){
+    header('Location: ../mainpage/login.php');
+  }
+  $user = $api['user_info'];
+  $articles = $api['articles'];
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Upload</title>
     <link rel="stylesheet" href="css/style.css">
     <script href="js/index.js"></script>
 </head>
@@ -44,10 +54,11 @@
 
     </script>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <form class="file-upload">
+        <form  enctype="multipart/form-data" class="file-upload" method="post" action="upload_image.php">
             <h1 class="title-upload-form">Upload hier je afbeeldingen</h1>
+            <input type="text" value="<?php echo $_SESSION['article_id']; ?>" name="project_id" hidden>
             <div class="image-upload-wrap">
-                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <input required class="file-upload-input" name="image" type='file' onchange="readURL(this);" accept="image/*" />
                 <div class="drag-text">
                 <h3>Drag and drop a file or select add Image</h3>
                 </div>
@@ -59,18 +70,19 @@
                 </div>
             </div>
             <div class="upload-button">
-                <button>Upload</button>
+            <input type="submit" value="Upload">
             </div>
         </form>
 
-        <form class="text-upload">
+        <form class="text-upload" method="post" action="">
+            <input type="text" value="<?php echo $_SESSION['article_id']; ?>" name="project_id" hidden>
             <div class="input-fields">
-                <input type="text" class="text-field-upload">
+                <input required type="text" class="text-field-upload">
 
 
             </div>
             <div class="upload-button">
-                <button>Upload</button>
+                <input type="submit" value="Upload">
             </div>
         </form>
 </body>
