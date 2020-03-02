@@ -49,7 +49,7 @@
       <?php
       foreach($articles as $article){
         echo "<div class='imagegallery-img'>
-        <a href='#' data-toggle='galleryModal'>
+        <a href='article.php?id=".$article['id']."' data-toggle='galleryModal'>
           <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
         </a>
       </div>";
