@@ -1,4 +1,7 @@
 <?php
+if(!session_status()){
+    SESSION_START();
+}
 $curl = curl_init();
 if(isset($_POST['username'])&&isset($_POST['password'])){
     $auth_data = array(
@@ -15,7 +18,8 @@ else if(isset($_POST['r_user'])&&isset($_POST['r_name'])&&isset($_POST['r_pass']
         'r_pass'   => $_POST['r_pass']
     );
 }
-else if(isset($_SESSION['token']))
+
+elseif(isset($_SESSION['token']))
 {
     $auth_data = array(
         'token'   => $_SESSION['token']

@@ -3,7 +3,7 @@
   $_SESSION['article_id'] = "";
   include('utils/api_connect.php');
   if(!$_SESSION['token']){
-    header('Location: login.php');
+    // header('Location: login.php');
   }
   $user = $api['user_info'];
   $articles = $api['articles'];
