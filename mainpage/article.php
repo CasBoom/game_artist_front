@@ -117,6 +117,9 @@ if(isset($_GET['deletetxt']))
 </head>
 <body>
     <?php
+    echo "<h3>".$article['publisher']['name']."</h3><br>";
+    echo $article['publisher']['username']."<br>";
+    echo $article['publisher']['class']."<br>";
     if($article['editable']){
         echo "<a href='http://localhost/bureau/game_artist/git_front/game_artist_front/mainpage/article.php?id=".$_GET['id']."&delete=1'>
                 Delete
