@@ -56,6 +56,27 @@ if(isset($_GET['delete']))
             'project' => $_GET['id']
         );
     }
+curl_setopt($curl, CURLOPT_POST, 1);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
+curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+$result = curl_exec($curl);
+header('Location: index.php');
+}
+
+if(isset($_GET['deleteimg']))
+{
+    $curl = curl_init();
+    if(isset($_SESSION['token']))
+    {
+        $auth_data = array(
+            'token'   => $_SESSION['token'],
+            'delete'  => '1',
+            'image' => $_GET['img']
+        );
+    }
     curl_setopt($curl, CURLOPT_POST, 1);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
@@ -63,8 +84,28 @@ if(isset($_GET['delete']))
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $result = curl_exec($curl);
-    header('Location: index.php');
 }
+
+if(isset($_GET['deletetxt']))
+{
+    $curl = curl_init();
+    if(isset($_SESSION['token']))
+    {
+        $auth_data = array(
+            'token'   => $_SESSION['token'],
+            'delete'  => '1',
+            'text' => $_GET['txt']
+        );
+    }
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
+    curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    $result = curl_exec($curl);
+}
+
 ?>
 <html lang="en">
 <head>
@@ -89,12 +130,18 @@ if(isset($_GET['delete']))
                 echo "
                 <div class='project-image'>
                     <img src='../upload/".$item['img']."' alt='p-img' width='100%'>
+                    <a href='http://localhost/bureau/game_artist/git_front/game_artist_front/mainpage/article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
+                        Delete
+                    </a>
                 </div>
                 ";
             }else if(isset($item['txt'])){
                 echo "
                 <div class='project-info'>
                     <p>".$item['txt']."</p>
+                    <a href='http://localhost/bureau/game_artist/git_front/game_artist_front/mainpage/article.php?id=".$_GET['id']."&deletetxt=1&txt=".$item['id']."'>
+                        Delete
+                    </a>
                 </div>
                 ";
             }
@@ -123,8 +170,8 @@ if(isset($_GET['delete']))
             echo "
             <div class='comment'>
                 <P class='username'>".$comment['username']."</P>
-                <p class='comment-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut augue blandit, tempor velit eu, cursus risus. Nam auctor lacus et ligula lacinia, a dapibus felis porta. Phasellus a sodales erat. Aenean eget justo porta, suscipit nisl ultrices, gravida dolor. Aliquam ultricies augue ut eleifend aliquet. In scelerisque sapien ac fringilla pharetra. Integer a ipsum non enim tincidunt posuere.</p>
-                <p class='star-rating'>5/10</p>
+                <p class='comment-text'>L".$comment['comment']."</p>
+                <p class='star-rating'>".$comment['rating']."/10</p>
             </div>
             ";
         }

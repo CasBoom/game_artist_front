@@ -26,5 +26,5 @@ if(!$result){
     $_SESSION['token'] = $api['user_info']['token'];
 }
 curl_close($curl);
-header('Location: upload.php?a='.$_POST['project_id']);
+header('Location: ../mainpage/article.php?id='.$_POST['project_id']);
 ?>
