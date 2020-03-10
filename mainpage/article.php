@@ -106,6 +106,25 @@ if(isset($_GET['deletetxt']))
     $result = curl_exec($curl);
 }
 
+if(isset($_POST['private']))
+{
+    $curl = curl_init();
+    if(isset($_SESSION['token']))
+    {
+        $auth_data = array(
+            'token'   => $_SESSION['token'],
+            'private'  => $_POST['private']
+        );
+    }
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
+    curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    $result = curl_exec($curl);
+}
+
 ?>
 <html lang="en">
 <head>
@@ -127,6 +146,15 @@ if(isset($_GET['deletetxt']))
         echo "<a href='http://localhost/bureau/game_artist/git_front/game_artist_front/upload/upload.php?a=".$_GET['id']."'>
                 Upload
             </a>";
+
+        echo "<form method=\"post\" action=\"\">
+            Private: <br>
+            <input type=\"radio\" id=\"yes\" name\"private\" value=\"1\">
+            <label for=\"\">Yes</label><br>
+            <input type=\"radio\" id=\"no\" name=\"private\" value=\"0\">
+            <label for=\"no\">No</label><br>
+            <input type=\"submit\">
+        </form>";
 
         foreach($article['content']['items'] as $item){
             if(isset($item['img'])){
@@ -167,6 +195,9 @@ if(isset($_GET['deletetxt']))
         }
     }
     ?>
+    <form method="post" action="">
+
+    <form>
     <div class="comments-field">
         <?php
         foreach($article['content']['comments'] as $comment){
