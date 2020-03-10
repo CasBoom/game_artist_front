@@ -18,7 +18,6 @@ else if(isset($_POST['r_user'])&&isset($_POST['r_name'])&&isset($_POST['r_pass']
         'r_pass'   => $_POST['r_pass']
     );
 }
-
 elseif(isset($_SESSION['token']))
 {
     $auth_data = array(

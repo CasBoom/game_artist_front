@@ -6,8 +6,9 @@
     header('Location: login.php');
   }
   $user = $api['user_info'];
-  $articles = $api['articles'];
-
+  if(isset($api['articles'])){
+    $articles = $api['articles'];
+  }
   function select_item_first($array, $item, $string){
     foreach($array as $field){
       if(isset($field[$item])){
@@ -47,13 +48,17 @@
     <div class="container">
       <div class="gallery">
       <?php
-      foreach($articles as $article){
-        echo "<div class='imagegallery-img'>
-        <a href='article.php?id=".$article['id']."' data-toggle='galleryModal'>
-          <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
-        </a>
-      </div>";
-      }
+
+      if(isset($articles))
+      {
+        foreach($articles as $article){
+          echo "<div class='imagegallery-img'>
+          <a href='article.php?id=".$article['id']."' data-toggle='galleryModal'>
+            <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
+          </a>
+        </div>";
+        }
+    }
       ?>
       </div><!-- .end Gallery wrapper -->
     </div>
