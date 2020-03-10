@@ -53,7 +53,7 @@ SESSION_START();
         });
 
     </script>
-    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <form  enctype="multipart/form-data" class="file-upload" method="post" action="upload_image.php">
             <h1 class="title-upload-form">Upload hier je afbeeldingen</h1>
             <input type="text" value="<?php echo $_GET['a']; ?>" name="project_id" hidden>

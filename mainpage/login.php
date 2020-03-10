@@ -11,7 +11,7 @@
 
     <!-- -->
     <!-- Vendor CSS-->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- -->
     <!-- CSS -->
       <link rel="stylesheet" href="src/css/master.css">
@@ -85,14 +85,14 @@
                   <input class="inputBox" type="password" value="" name="r_pass">
                 </div>
                 <p class="formText">Heeft u al een account? <a onclick="openLogin()">Aanmelden</a></p>
-                <p class="formText">Door te klikken op 'Account maken', geef ik aan dat ik het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="https://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> heb gelezen en ermee akkoord ga.</p>
+                <p class="formText">Door te klikken op 'Account maken', geef ik aan dat ik het <a href="http://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="http://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> heb gelezen en ermee akkoord ga.</p>
                 <div class="buttons">
                   <input class="button" type="submit" name="submit" value="Account maken">
                 </div>
               </form>
               <hr class="loginContainersDivider">
               <div class="subLoginContainers">
-                <p>Beveiligd met reCAPTCHA en onder voorbehoud van het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="https://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> van Google.</p>
+                <p>Beveiligd met reCAPTCHA en onder voorbehoud van het <a href="http://policies.google.com/privacy?hl=nl">privacybeleid</a> en de <a href="http://policies.google.com/terms?hl=nl">gebruikersvoorwaarden</a> van Google.</p>
               </div>
             </div>
           </div>

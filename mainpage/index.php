@@ -25,8 +25,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
 
     <div class="header">
         <div class="profile">
-          <img src="https://www.pngkey.com/png/detail/157-1579943_no-profile-picture-round.png" alt="profile_picture" width="300px" height="300px">
+          <img src="http://www.pngkey.com/png/detail/157-1579943_no-profile-picture-round.png" alt="profile_picture" width="300px" height="300px">
           <h1 class="main_name"><?php echo $user['name']; ?></h1>
           <p class="main">Username</p><p class="after_main"><?php echo $user['username']; ?></p>
           <p class="main">Klas</p><p class="after_main"><?php echo $user['class']; ?></p>

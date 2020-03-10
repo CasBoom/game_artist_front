@@ -26,7 +26,7 @@ if(isset($_GET['id'])){
     curl_setopt($curl, CURLOPT_POST, 1);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-    curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/?article&id='.$_GET['id']);
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?article&id='.$_GET['id']);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $result = curl_exec($curl);
@@ -59,7 +59,7 @@ if(isset($_GET['delete']))
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 $result = curl_exec($curl);
@@ -80,7 +80,7 @@ if(isset($_GET['deleteimg']))
     curl_setopt($curl, CURLOPT_POST, 1);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-    curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $result = curl_exec($curl);
@@ -100,26 +100,28 @@ if(isset($_GET['deletetxt']))
     curl_setopt($curl, CURLOPT_POST, 1);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-    curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $result = curl_exec($curl);
 }
-
-if(isset($_POST['private']))
+var_dump($_POST);
+if(isset($_POST['public']))
 {
     $curl = curl_init();
     if(isset($_SESSION['token']))
     {
         $auth_data = array(
-            'token'   => $_SESSION['token'],
-            'private'  => $_POST['private']
+            'token'    => $_SESSION['token'],
+            'public'  => $_POST['public'],
+            'project_id' => $_GET['id'],
+            'edit'     => '1'
         );
     }
     curl_setopt($curl, CURLOPT_POST, 1);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-    curl_setopt($curl, CURLOPT_URL, 'http://localhost/bureau/game_artist/git_api/web_artist_API/');
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $result = curl_exec($curl);
@@ -140,18 +142,18 @@ if(isset($_POST['private']))
     echo $article['publisher']['username']."<br>";
     echo $article['publisher']['class']."<br>";
     if($article['editable']){
-        echo "<a href='http://localhost/bureau/game_artist/git_front/game_artist_front/mainpage/article.php?id=".$_GET['id']."&delete=1'>
+        echo "<a href='article.php?id=".$_GET['id']."&delete=1'>
                 Delete
             </a><br>";
         echo "<a href='http://localhost/bureau/game_artist/git_front/game_artist_front/upload/upload.php?a=".$_GET['id']."'>
                 Upload
             </a>";
 
-        echo "<form method=\"post\" action=\"\">
-            Private: <br>
-            <input type=\"radio\" id=\"yes\" name\"private\" value=\"1\">
+        echo "<form method=\"post\" action=\"article.php?id=".$_GET['id']."\">
+            Public: <br>
+            <input type=\"radio\" id=\"yes\" name\"public\" value=\"1\">
             <label for=\"\">Yes</label><br>
-            <input type=\"radio\" id=\"no\" name=\"private\" value=\"0\">
+            <input type=\"radio\" id=\"no\" name=\"public\" value=\"0\">
             <label for=\"no\">No</label><br>
             <input type=\"submit\">
         </form>";
@@ -196,7 +198,9 @@ if(isset($_POST['private']))
     }
     ?>
     <form method="post" action="">
-
+        <textarea name="comment">
+        </textarea>
+    <input type="submit">
     <form>
     <div class="comments-field">
         <?php
@@ -204,7 +208,7 @@ if(isset($_POST['private']))
             echo "
             <div class='comment'>
                 <P class='username'>".$comment['username']."</P>
-                <p class='comment-text'>L".$comment['comment']."</p>
+                <p class='comment-text'>".$comment['comment']."</p>
                 <p class='star-rating'>".$comment['rating']."/10</p>
             </div>
             ";
