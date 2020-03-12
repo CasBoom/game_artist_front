@@ -151,7 +151,7 @@ if(isset($_POST['public']))
 
         echo "<form method=\"post\" action=\"article.php?id=".$_GET['id']."\">
             Public: <br>
-            <input type=\"radio\" id=\"yes\" name\"public\" value=\"1\">
+            <input type=\"radio\" id=\"yes\" name=\"public\" value=\"1\">
             <label for=\"\">Yes</label><br>
             <input type=\"radio\" id=\"no\" name=\"public\" value=\"0\">
             <label for=\"no\">No</label><br>
