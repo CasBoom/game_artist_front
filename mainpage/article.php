@@ -105,7 +105,7 @@ if(isset($_GET['deletetxt']))
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $result = curl_exec($curl);
 }
-var_dump($_POST);
+
 if(isset($_POST['public']))
 {
     $curl = curl_init();

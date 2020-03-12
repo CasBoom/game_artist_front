@@ -14,7 +14,7 @@ else if(isset($_POST['r_user'])&&isset($_POST['r_name'])&&isset($_POST['r_pass']
     $auth_data = array(
         'r_user'   => $_POST['r_user'],
         'r_name'   => $_POST['r_name'],
-        'r_class'   => $_POST['r_class'],
+        'r_class'  => $_POST['r_class'],
         'r_pass'   => $_POST['r_pass']
     );
 }
