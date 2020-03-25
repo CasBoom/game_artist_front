@@ -127,6 +127,48 @@ if(isset($_POST['public']))
     $result = curl_exec($curl);
 }
 
+if(isset($_POST['comment'])&&isset($_POST['rating']))
+{
+    $curl = curl_init();
+    if(isset($_SESSION['token']))
+    {
+        $auth_data = array(
+            'token'    => $_SESSION['token'],
+            'comment'  => $_POST['comment'],
+            'rating'  => $_POST['rating'],
+            'project_id' => $_GET['id'],
+            'add_to_article'     => '1'
+        );
+    }
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    $result = curl_exec($curl);
+}
+
+if(isset($_POST['delete_comment'])&&isset($_POST['comment_id']))
+{
+    $curl = curl_init();
+    if(isset($_SESSION['token']))
+    {
+        $auth_data = array(
+            'token'   => $_SESSION['token'],
+            'delete'  => '1',
+            'comment' => $_POST['comment_id']
+        );
+    }
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    $result = curl_exec($curl);
+}
+
 ?>
 <html lang="en">
 <head>
@@ -198,16 +240,23 @@ if(isset($_POST['public']))
     }
     ?>
     <form method="post" action="">
-        <textarea name="comment">
-        </textarea>
+        Rating: <input type="number" name="rating" max="10" min="0" required><br>
+        Comment :<textarea name="comment" required></textarea><br>
     <input type="submit">
-    <form>
+    </form>
     <div class="comments-field">
         <?php
         foreach($article['content']['comments'] as $comment){
             echo "
-            <div class='comment'>
-                <P class='username'>".$comment['username']."</P>
+            <div class='comment'>";
+            if($article['editable']||$comment['editable'])
+            {
+                echo "<form action=''. method='post'>
+                    <input type='text' value='".$comment['id']."' name='comment_id' hidden>
+                    <input type='submit' value='delete' name='delete_comment'>
+                <form>";
+            }
+            echo "<p class='username'>".$comment['username']."</p>
                 <p class='comment-text'>".$comment['comment']."</p>
                 <p class='star-rating'>".$comment['rating']."/10</p>
             </div>
