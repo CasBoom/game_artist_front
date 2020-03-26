@@ -60,7 +60,6 @@ if(isset($_FILES['image'])){
         $result = curl_exec($curl);
         var_dump($result);
         if(!$result){
-            $_SESSION['token'] = false;
         }else{
             $api = json_decode($result, true);
             $_SESSION['token'] = $api['user_info']['token'];
