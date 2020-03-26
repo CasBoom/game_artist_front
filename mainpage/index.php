@@ -1,5 +1,9 @@
 <?php
   SESSION_START();
+  if(isset($_GET['logout']))
+    {
+        session_destroy();
+    }
   $_SESSION['article_id'] = "";
   include('utils/api_connect.php');
   if(!$_SESSION['token']){
@@ -32,8 +36,9 @@
 <body>
     <!-- <script src="js/animation.js"></script> -->
     <script src="src/js/jquery.js"></script>
-
-
+    <?php
+      include('../header.php');
+    ?>
     <div class="header">
         <div class="profile">
           <img src="http://www.pngkey.com/png/detail/157-1579943_no-profile-picture-round.png" alt="profile_picture" width="300px" height="300px">

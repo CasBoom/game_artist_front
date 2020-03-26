@@ -1,5 +1,9 @@
 <?php
 SESSION_START();
+if(isset($_GET['logout']))
+        {
+            session_destroy();
+        }
 $curl = curl_init();
 if(isset($_GET['id'])){
     if(isset($_POST['username'])&&isset($_POST['password'])){
@@ -32,10 +36,8 @@ if(isset($_GET['id'])){
     $result = curl_exec($curl);
 }
 if(!$result){
-    $_SESSION['token'] = false;
 }else{
     $api = json_decode($result, true);
-    $_SESSION['token'] = $api['user_info']['token'];
 }
 curl_close($curl);
 
@@ -179,7 +181,8 @@ if(isset($_POST['delete_comment'])&&isset($_POST['comment_id']))
     <title>Game artist portfolio</title>
 </head>
 <body>
-    <?php
+<?php
+      include('../header.php');
     echo "<h3>".$article['publisher']['name']."</h3><br>";
     echo $article['publisher']['username']."<br>";
     echo $article['publisher']['class']."<br>";
