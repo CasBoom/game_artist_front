@@ -41,3 +41,5 @@
         text-align:center;
     }
 </style>
+
+<!-- I am terribly sorry for whoever has to maintain this mess, the api is OK, manageable. This is hell. Which is coincidentally also the place I will go to for unleashing this monstrosity onto the earth. -->
