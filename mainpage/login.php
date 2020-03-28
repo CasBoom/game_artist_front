@@ -40,8 +40,8 @@
             <div class="loginContainers">
               <form class="loginForm" method="post" action="index.php">
                 <div class="formGroup">
-                  <p class="inputTitle">Studentennummer</p>
-                  <input class="inputBox" type="text" name="username" value="" name="loginStudentNumber">
+                  <p class="inputTitle">E-mail</p>
+                  <input class="inputBox" type="email" name="username" value="" name="loginStudentNumber">
                 </div>
                 <div class="formGroup">
                   <p class="inputTitle">Wachtwoord</p>
@@ -69,8 +69,8 @@
             <div class="LoginContainers">
               <form class="loginForm" method="post" action="index.php">
                 <div class="formGroup">
-                  <p class="inputTitle">Studentennummer</p>
-                  <input class="inputBox" type="text" value="" name="r_user">
+                  <p class="inputTitle">E-mail</p>
+                  <input class="inputBox" type="email" value="" name="r_user">
                 </div>
                 <div class="formGroup">
                   <p class="inputTitle">Naam</p>
