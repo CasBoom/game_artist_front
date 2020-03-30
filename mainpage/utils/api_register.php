@@ -2,7 +2,7 @@
 $curl = curl_init();
 if(isset($_GET['ac'])){
     $auth_data = array(
-        'ac'   => $_POST['ac']
+        'ac'   => $_GET['ac']
     );
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
