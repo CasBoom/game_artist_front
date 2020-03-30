@@ -1,5 +1,6 @@
 <?php
   SESSION_START();
+  include('utils/api_register.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
