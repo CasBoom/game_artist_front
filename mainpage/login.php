@@ -57,7 +57,7 @@
               </form>
               <hr class="loginContainersDivider">
               <div class="subLoginContainers">
-                <a href="#">Wachtwoord opnieuw instellen</a>
+                <a href="wachtwoord_vergeten.php">Wachtwoord opnieuw instellen</a>
                 <p>Beveiligd met reCAPTCHA en onder voorbehoud van het <a href="#">privacybeleid</a> en de <a href="#">gebruikersvoorwaarden</a> van Google.</p>
               </div>
             </div>

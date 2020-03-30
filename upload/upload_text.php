@@ -2,9 +2,6 @@
 SESSION_START();
 
 $curl = curl_init();
-
-var_dump($_SESSION['token']);
-
 $auth_data = array(
     'token'   => $_SESSION['token'],
     'add_to_article' => '',

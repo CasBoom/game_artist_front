@@ -58,7 +58,6 @@ if(isset($_FILES['image'])){
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
         $result = curl_exec($curl);
-        var_dump($result);
         if(!$result){
         }else{
             $api = json_decode($result, true);

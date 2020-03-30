@@ -21,7 +21,6 @@ if(!$result){
     $api = json_decode($result, true);
 }
 curl_close($curl);
-var_dump($api);
 $article = $api['article_id'];
 header('Location: upload.php?a='.$article);
 

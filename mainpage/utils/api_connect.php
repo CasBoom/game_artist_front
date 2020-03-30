@@ -3,6 +3,7 @@ if(!session_status()){
     SESSION_START();
 }
 $curl = curl_init();
+$auth_data = array();
 if(isset($_POST['username'])&&isset($_POST['password'])){
     $auth_data = array(
         'username'   => $_POST['username'],
