@@ -192,7 +192,7 @@ if(isset($_POST['delete_comment'])&&isset($_POST['comment_id']))
         echo "<a href='article.php?id=".$_GET['id']."&delete=1'>
                 Delete
             </a><br>";
-        echo "<a href='http://localhost/bureau/game_artist/git_front/game_artist_front/upload/upload.php?a=".$_GET['id']."'>
+        echo "<a href='http://bitbenders.gluweb.nl/game_artist/upload/upload.php?a=".$_GET['id']."'>
                 Upload
             </a>";
 
@@ -210,7 +210,7 @@ if(isset($_POST['delete_comment'])&&isset($_POST['comment_id']))
                 echo "
                 <div class='project-image'>
                     <img src='../upload/".$item['img']."' alt='p-img' width='100%'>
-                    <a href='http://localhost/bureau/game_artist/git_front/game_artist_front/mainpage/article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
+                    <a href='http://bitbenders.gluweb.nl/game_artist/mainpage/article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
                         Delete
                     </a>
                 </div>
@@ -219,7 +219,7 @@ if(isset($_POST['delete_comment'])&&isset($_POST['comment_id']))
                 echo "
                 <div class='project-info'>
                     <p>".$item['txt']."</p>
-                    <a href='http://localhost/bureau/game_artist/git_front/game_artist_front/mainpage/article.php?id=".$_GET['id']."&deletetxt=1&txt=".$item['id']."'>
+                    <a href='http://bitbenders.gluweb.nl/game_artist/mainpage/article.php?id=".$_GET['id']."&deletetxt=1&txt=".$item['id']."'>
                         Delete
                     </a>
                 </div>

@@ -7,7 +7,7 @@ if(isset($_POST['request_mail'])){
 }
 else if(isset($_POST['email'])&&isset($_POST['new_password'])&&isset($_POST['reset_token'])){
     $auth_data = array(
-        'email'   => $_POST['request_mail'],
+        'email'   => $_POST['email'],
         'reset_token' => $_POST['reset_token'],
         'new_password' => $_POST['new_password'],
     );
