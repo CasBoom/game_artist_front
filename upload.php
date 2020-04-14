@@ -4,7 +4,7 @@ if(isset($_GET['logout']))
         {
             session_destroy();
         }
-  include('../mainpage/utils/api_connect.php');
+  include('utils/api_connect.php');
   if(!$_SESSION['token']){
     header('Location: ../mainpage/login.php');
   }
@@ -58,7 +58,7 @@ if(isset($_GET['logout']))
     </script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <?php
-      include('../header.php');
+      include('header.php');
     ?>
         <form  enctype="multipart/form-data" class="file-upload" method="post" action="upload_image.php">
             <h1 class="title-upload-form">Upload hier je afbeeldingen</h1>

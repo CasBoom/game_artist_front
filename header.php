@@ -1,5 +1,5 @@
 <header>
-    <a class="glu_logo_wrapper" href="../index.php">
+    <a class="glu_logo_wrapper" href="index.php">
         <div class="glu_logo">
         </div>
     </a>
@@ -20,7 +20,7 @@
     header .glu_logo{
         height:120px;
         width:360px;
-        background-image:url('../logo.png');
+        background-image:url('img/logo.png');
         background-position:center;
         background-repeat:no-repeat;
     }
@@ -47,5 +47,3 @@
         session_destroy();
     }
 ?>
-
-<!-- I am terribly sorry for whoever has to maintain this mess, the api is OK, manageable. This is hell. Which is coincidentally also the place I will go to for unleashing this monstrosity onto the earth. -->

@@ -21,7 +21,7 @@ $article = $api['articles'][0];
 </head>
 <body>
 <?php
-      include('../header.php');
+      include('header.php');
     echo "<h3>".$article['publisher']['name']."</h3><br>";
     echo $article['publisher']['username']."<br>";
     echo $article['publisher']['class']."<br>";
@@ -46,7 +46,7 @@ $article = $api['articles'][0];
             if(isset($item['img'])){
                 echo "
                 <div class='project-image'>
-                    <img src='../".$item['img']."' alt='p-img' width='100%'>
+                    <img src='".$item['img']."' alt='p-img' width='100%'>
                     <a href='http://bitbenders.gluweb.nl/game_artist/mainpage/article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
                         Delete
                     </a>
@@ -68,7 +68,7 @@ $article = $api['articles'][0];
             if(isset($item['img'])){
                 echo "
                 <div class='project-image'>
-                    <img src='../".$item['img']."' alt='p-img' width='100%'>
+                    <img src='".$item['img']."' alt='p-img' width='100%'>
                 </div>
                 ";
             }else if(isset($item['txt'])){
