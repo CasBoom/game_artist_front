@@ -1,14 +1,7 @@
 <?php
   SESSION_START();
-  if(isset($_GET['logout']))
-    {
-        session_destroy();
-    }
   $_SESSION['article_id'] = "";
   include('utils/api_connect.php');
-  if(!$_SESSION['token']){
-    header('Location: login.php');
-  }
   $user = $api['user_info'];
   if(isset($api['articles'])){
     $articles = $api['articles'];

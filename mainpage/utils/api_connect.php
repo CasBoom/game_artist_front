@@ -39,3 +39,7 @@ if(!$result){
     $_SESSION['token'] = $api['user_info']['token'];
 }
 curl_close($curl);
+
+if(!$_SESSION['token']){
+    header('Location: login.php');
+}
