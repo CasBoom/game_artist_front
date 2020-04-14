@@ -29,12 +29,13 @@
         text-decoration:none;
     }
     header .logout{
-        padding:20px;
+        padding:10px;
         float:right;
         margin-right:25px;
         border-radius:15px;
         margin-top:45px;
-        width:10%;
+        width:5%;
+        min-width:80px;
         background-color:#f00;
         color:#fff;
         font-weight:bold;

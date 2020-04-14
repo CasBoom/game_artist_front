@@ -34,7 +34,6 @@
     ?>
     <div class="header">
         <div class="profile">
-          <img src="http://www.pngkey.com/png/detail/157-1579943_no-profile-picture-round.png" alt="profile_picture" width="300px" height="300px">
           <h1 class="main_name"><?php echo $user['name']; ?></h1>
           <p class="main">Username</p><p class="after_main"><?php echo $user['username']; ?></p>
           <p class="main">Klas</p><p class="after_main"><?php echo $user['class']; ?></p>
