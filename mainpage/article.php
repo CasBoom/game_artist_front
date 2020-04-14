@@ -16,7 +16,7 @@ $article = $api['articles'][0];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
     <title>Game artist portfolio</title>
 </head>
 <body>
@@ -29,7 +29,7 @@ $article = $api['articles'][0];
         echo "<a href='article.php?id=".$_GET['id']."&delete=1'>
                 Delete
             </a><br>";
-        echo "<a href='http://bitbenders.gluweb.nl/game_artist/upload/upload.php?a=".$_GET['id']."'>
+        echo "<a href='http://bitbenders.gluweb.nl/game_artist/upload.php?a=".$_GET['id']."'>
                 Upload
             </a>";
 
@@ -46,7 +46,7 @@ $article = $api['articles'][0];
             if(isset($item['img'])){
                 echo "
                 <div class='project-image'>
-                    <img src='../upload/".$item['img']."' alt='p-img' width='100%'>
+                    <img src='../".$item['img']."' alt='p-img' width='100%'>
                     <a href='http://bitbenders.gluweb.nl/game_artist/mainpage/article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
                         Delete
                     </a>
@@ -68,7 +68,7 @@ $article = $api['articles'][0];
             if(isset($item['img'])){
                 echo "
                 <div class='project-image'>
-                    <img src='../upload/".$item['img']."' alt='p-img' width='100%'>
+                    <img src='../".$item['img']."' alt='p-img' width='100%'>
                 </div>
                 ";
             }else if(isset($item['txt'])){
