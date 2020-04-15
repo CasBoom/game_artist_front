@@ -28,7 +28,12 @@ elseif(isset($_SESSION['token']))
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles');
+if(isset($_GET['id'])){
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?article&id='.$_GET['id']);
+}
+else{
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles');
+}
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 $result = curl_exec($curl);

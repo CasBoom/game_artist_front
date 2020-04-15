@@ -21,11 +21,24 @@ $article = $api['articles'][0];
 </head>
 <body>
 <?php
-      include('header.php');
-    echo "<h3>".$article['publisher']['name']."</h3><br>";
-    echo $article['publisher']['username']."<br>";
-    echo $article['publisher']['class']."<br>";
+    include('header.php');
+    ?>
+        <div class="userinfo">
+            <?php
+            echo "<h3>".$article['publisher']['name']."</h3><br>";
+            echo $article['publisher']['username']."<br>";
+            echo $article['publisher']['class']."<br>";
+            ?>
+        </div>
+    <?php
     if($article['editable']){
+        if(isset($_GET['error'])){
+            if($_GET['error']=='filesize'){
+                echo "<script>
+                 alert('Your file hasn\'t been uploaded because it was too big.');
+                </script>";
+            }
+        }
         echo "<a href='article.php?id=".$_GET['id']."&delete=1'>
                 Delete
             </a><br>";
