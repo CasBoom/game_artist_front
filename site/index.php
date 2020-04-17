@@ -1,5 +1,6 @@
 <?php
   SESSION_START();
+  $index = true;
   $_SESSION['article_id'] = "";
   include('utils/api_connect.php');
   $user = $api['user_info'];

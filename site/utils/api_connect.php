@@ -32,7 +32,12 @@ if(isset($_GET['id'])){
     curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?article&id='.$_GET['id']);
 }
 else{
-    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles');
+    if(isset($_GET['filter']))
+    {
+        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&filter='.$_GET['filter']);
+    }else{
+        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles');
+    }
 }
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);

@@ -3,9 +3,27 @@
         <div class="glu_logo">
         </div>
     </a>
+    <?php
+            if(isset($index)){
+                echo "
+                <div class='filter'>
+                <form  action='' method='get'>
+                    <input type='text' name='filter'>
+                    <input type='submit'>
+                </form>
+                </div>
+                ";
+            }
+        ?>
     <a href="?logout" class="logout">Logout</a>
 </header>
 <style>
+    .filter{
+        display:inline-block;
+        margin-top:55px;
+        margin-left:5%;
+    }
+
     header{
         width:100%;
         height:120px;
