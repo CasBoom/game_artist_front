@@ -3,11 +3,16 @@ SESSION_START();
 $curl = curl_init();
 if(isset($_SESSION['token']))
 {
-    $auth_data = array(
-        'token'   => $_SESSION['token'],
-        'create_article' => 1,
-        'public' => 0
-    );
+    if(isset($_POST['klas'])&&isset($_POST['period']))
+    {
+        $auth_data = array(
+            'token'   => $_SESSION['token'],
+            'create_article' => 1,
+            'public' => 0,
+            'class' => $_POST['klas'],
+            'period' => $_POST['period']
+        );
+    }
 }
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);

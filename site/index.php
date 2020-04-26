@@ -7,6 +7,7 @@
   if(isset($api['articles'])){
     $articles = $api['articles'];
   }
+  $miscs = $api['miscs'];
   function select_item_first($array, $item, $string){
     foreach($array as $field){
       if(isset($field[$item])){
@@ -38,7 +39,20 @@
           <h1 class="main_name"><?php echo $user['name']; ?></h1>
           <p class="main">Username</p><p class="after_main"><?php echo $user['username']; ?></p>
           <p class="main">Klas</p><p class="after_main"><?php echo $user['class']; ?></p>
-          <button type="button" class="upload-btn" ><a class="btn-link" href="upload_index.php">Upload project</a></button>
+          <form action="upload_index.php" method="post">
+            Les<br>
+            <select id="les" name="klas">
+              <option value="0">Geen</option>
+              <?php
+                foreach($miscs['lessons'] as $les)
+                {
+                  echo "<option value='".$les['id']."'>".$les['lesson']."</option>";
+                }
+              ?>
+            </select required><br><br>
+            Periode<br> <input type="number" name="period"><br><br>
+            <input type="submit" class="upload-btn" value="Upload"><br>
+          </form>
         </div>
     </div>
 

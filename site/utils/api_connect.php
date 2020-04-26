@@ -29,14 +29,14 @@ curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
 if(isset($_GET['id'])){
-    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?article&id='.$_GET['id']);
+    curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?article&tags&id='.$_GET['id']);
 }
 else{
     if(isset($_GET['filter']))
     {
-        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&filter='.$_GET['filter']);
+        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&tags&filter='.$_GET['filter']);
     }else{
-        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles');
+        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&tags');
     }
 }
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

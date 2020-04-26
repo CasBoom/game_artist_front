@@ -5,11 +5,13 @@ include('utils/delete_project.php');
 include('utils/delete_img.php');
 include('utils/delete_text.php');
 include('utils/delete_comment.php');
+include('utils/delete_tag.php');
 include('utils/post_comment.php');
 include('utils/article_public.php');
 
 $user = $api['user_info'];
 $article = $api['articles'][0];
+$miscs = $api['miscs'];
 ?>
 <html lang="en">
 <head>
@@ -26,8 +28,20 @@ $article = $api['articles'][0];
         <div class="userinfo">
             <?php
             echo "<h3>".$article['publisher']['name']."</h3><br>";
-            echo $article['publisher']['username']."<br>";
-            echo $article['publisher']['class']."<br>";
+            echo "Naam:". $article['publisher']['username']."<br>";
+            echo "Klas:".$article['publisher']['class']."<br>";
+            echo "Les:".$article['content']['info']['les']."<br>";
+            echo "Tags:<br><div class='tags'";
+            foreach($article['content']['info']['tags'] as $tag)
+            {
+                echo "<div class='tag'>". $tag['name'] ."
+                    <form action='' method='post'>
+                        <input type='hidden' name='delete_tag' value='".$tag['id']."' hidden>
+                        <input type='submit' value='X'>
+                    </form>
+                </div>";
+            }
+            echo "</div>";
             ?>
         </div>
     <?php
@@ -76,6 +90,18 @@ $article = $api['articles'][0];
                 ";
             }
         }
+        echo "<h3>Add a tag</h3>
+        <form method='post' action=''>
+            Tag <br>
+            <select name='klas'>";      
+        foreach($miscs['tags'] as $tag)
+        {
+            echo "<option value='".$tag['id']."'>".$tag['tag']."</option>";
+        }
+        echo "
+        </select required><br><br>
+        <input type='submit'>
+        </form>";
     }else{
         foreach($article['content']['items'] as $item){
             if(isset($item['img'])){
@@ -94,10 +120,11 @@ $article = $api['articles'][0];
         }
     }
     ?>
+    <h3>Comment</h3>
     <form method="post" action="">
-        Rating: <input type="number" name="rating" max="10" min="0" required><br>
         Comment :<textarea name="comment" required></textarea><br>
-    <input type="submit">
+        Rating: <input type="number" name="rating" max="10" min="0" required><br>
+        <input type="submit">
     </form>
     <div class="comments-field">
         <?php
