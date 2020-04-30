@@ -59,9 +59,43 @@ h1{
     padding: 5px;
 }
 
+.imagegallery-img a{
+    color:#c96b00;
+}
+
 .imagegallery-img img {
     width: 100%;
     height: auto;
+}
+
+.article_main{
+    width:90%;
+    margin-left:5%;
+}
+
+.article_main a{
+    color:#000;
+    background-color:#c9ffc9;
+    border:1px solid #438843;
+    border-radius: 5px;
+    margin-top:10px;
+}
+
+.userinfo{
+    background-color:#c9c9ee;
+    padding:15px;
+    border-radius: 15px;
+    border:1px solid #9c9cdd;
+}
+
+.userinfo .tag, .userinfo .form{
+    display: inline-block;
+    width:25px;
+    padding:5px;
+    border-radius: 3px;
+    background-color: #eec9c9;
+    border:1px solid #aa4444;
+    margin-right:5px;
 }
 
 .upload-btn {

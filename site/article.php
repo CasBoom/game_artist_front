@@ -6,6 +6,7 @@ include('utils/delete_img.php');
 include('utils/delete_text.php');
 include('utils/delete_comment.php');
 include('utils/delete_tag.php');
+include('utils/add_tag.php');
 include('utils/post_comment.php');
 include('utils/article_public.php');
 
@@ -25,13 +26,25 @@ $miscs = $api['miscs'];
 <?php
     include('header.php');
     ?>
+    <main class='article_main'>
         <div class="userinfo">
             <?php
-            echo "<h3>".$article['publisher']['name']."</h3><br>";
-            echo "Naam:". $article['publisher']['username']."<br>";
-            echo "Klas:".$article['publisher']['class']."<br>";
-            echo "Les:".$article['content']['info']['les']."<br>";
-            echo "Tags:<br><div class='tags'";
+            echo "<h3>".$article['publisher']['name']."</h3>
+            <ul>
+                <li>
+                    Naam: ". $article['publisher']['username']."
+                </li>
+                <li>
+                    Klas: ".$article['publisher']['class']."<br>
+                </li>
+                <li>
+                    Periode: ".$article['period']."<br>
+                </li>
+                <li>
+                    Les: ".$article['content']['info']['les']."<br>
+                </li>
+                <li>
+            Tags:<br><div class='tags'>";
             foreach($article['content']['info']['tags'] as $tag)
             {
                 echo "<div class='tag'>". $tag['name'] ."
@@ -41,7 +54,7 @@ $miscs = $api['miscs'];
                     </form>
                 </div>";
             }
-            echo "</div>";
+            echo "</ul></div>";
             ?>
         </div>
     <?php
@@ -93,7 +106,7 @@ $miscs = $api['miscs'];
         echo "<h3>Add a tag</h3>
         <form method='post' action=''>
             Tag <br>
-            <select name='klas'>";      
+            <select name='tag_add'>";      
         foreach($miscs['tags'] as $tag)
         {
             echo "<option value='".$tag['id']."'>".$tag['tag']."</option>";
@@ -126,7 +139,7 @@ $miscs = $api['miscs'];
         Rating: <input type="number" name="rating" max="10" min="0" required><br>
         <input type="submit">
     </form>
-    <div class="comments-field">
+    <div class="comments_field">
         <?php
         foreach($article['content']['comments'] as $comment){
             echo "
@@ -146,6 +159,6 @@ $miscs = $api['miscs'];
         }
         ?>
     </div>
-    
+    </main>
 </body>
 </html>

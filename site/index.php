@@ -42,7 +42,6 @@
           <form action="upload_index.php" method="post">
             Les<br>
             <select id="les" name="klas">
-              <option value="0">Geen</option>
               <?php
                 foreach($miscs['lessons'] as $les)
                 {
@@ -64,11 +63,14 @@
       if(isset($articles))
       {
         foreach($articles as $article){
-          echo "<div class='imagegallery-img'>
-          <a href='article.php?id=".$article['id']."' data-toggle='galleryModal'>
-            <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
-          </a>
-        </div>";
+          echo "
+          <div class='imagegallery-img'>
+            <a href='article.php?id=".$article['id']."' data-toggle='galleryModal'>
+              <p>Periode ".$article['period']."</p>
+              <p>Les: ".$article['content']['info']['les']."</p>
+              <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
+            </a>
+          </div>";
         }
     }
       ?>
