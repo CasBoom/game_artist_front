@@ -14,8 +14,12 @@
                 </div>
                 ";
             }
+            if($user['role']<=2){
+                echo "<a href='admin.php' class='cool_button admin'>Admin</a>";
+            }
         ?>
-    <a href="?logout" class="logout">Logout</a>
+        
+    <a href="?logout" class="cool_button logout">Logout</a>
 </header>
 <style>
     .filter{
@@ -27,6 +31,7 @@
     header{
         width:100%;
         height:120px;
+        border-bottom:1px solid #c9c9c9;
     }
     
     .glu_logo_wrapper{
@@ -46,7 +51,8 @@
     a{
         text-decoration:none;
     }
-    header .logout{
+
+    header .cool_button{
         padding:10px;
         float:right;
         margin-right:25px;
@@ -54,10 +60,17 @@
         margin-top:45px;
         width:5%;
         min-width:80px;
-        background-color:#f00;
         color:#fff;
         font-weight:bold;
         text-align:center;
+    }
+
+    header .logout{
+        background-color:#f00;
+    }
+
+    header .admin{
+        background-color:#494;
     }
 </style>
 <?php
