@@ -59,6 +59,7 @@ h1{
     padding: 5px;
     border:1px solid #c9c9c9;
     border-radius: 5px;
+    height:350px;
 }
 
 .imagegallery-img a{
@@ -67,8 +68,8 @@ h1{
 
 .imagegallery-img img {
     width: 100%;
-    height: auto;
-    max-height:335px;
+    height:auto;
+    max-height:250px;
 }
 
 .article_main{
