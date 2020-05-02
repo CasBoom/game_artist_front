@@ -37,19 +37,27 @@
     <div class="header">
         <div class="profile">
           <h1 class="main_name"><?php echo $user['name']; ?></h1>
-          <p class="main">Username</p><p class="after_main"><?php echo $user['username']; ?></p>
+          <p class="main">E-mail</p><p class="after_main"><?php echo $user['username']; ?></p>
           <p class="main">Klas</p><p class="after_main"><?php echo $user['class']; ?></p>
           <form action="upload_index.php" method="post">
             Les<br>
-            <select id="les" name="klas">
+            <select id="les" name="klas" required>
               <?php
                 foreach($miscs['lessons'] as $les)
                 {
-                  echo "<option value='".$les['id']."'>".$les['lesson']."</option>";
+                  echo "<option value='".$les['id']."'  required>".$les['lesson']."</option >";
                 }
               ?>
             </select required><br><br>
-            Periode<br> <input type="number" name="period"><br><br>
+            Periode<br>
+            <select id="periode" name="period" required>
+              <?php
+                for($i = 1; $i<=16; $i++)
+                {
+                  echo "<option value='$i'> Periode $i</option>";
+                }
+              ?>
+            </select required><br><br>
             <input type="submit" class="upload-btn" value="Upload"><br>
           </form>
         </div>

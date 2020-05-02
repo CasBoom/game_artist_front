@@ -12,21 +12,28 @@ if(isset($_SESSION['token']))
             'class' => $_POST['klas'],
             'period' => $_POST['period']
         );
+    
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
+        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        $result = curl_exec($curl);
+        if(!$result){
+            header('Location: index.php');    
+        }else{
+            $api = json_decode($result, true);
+            var_dump($api);
+            $article = $api['article_id'];
+            header('Location: upload.php?a='.$article);
+        }
+        curl_close($curl);
+        
     }
 }
-curl_setopt($curl, CURLOPT_POST, 1);
-curl_setopt($curl, CURLOPT_POSTFIELDS, $auth_data);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $auth_data);
-curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/');
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-$result = curl_exec($curl);
-if(!$result){
-}else{
-    $api = json_decode($result, true);
+else
+{
+    header('Location: index.php');
 }
-curl_close($curl);
-$article = $api['article_id'];
-header('Location: upload.php?a='.$article);
-
 ?>
