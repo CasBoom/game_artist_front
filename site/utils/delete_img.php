@@ -6,7 +6,7 @@ if(isset($_GET['deleteimg']))
     {
         $auth_data = array(
             'token'   => $_SESSION['token'],
-            'delete'  => '1',
+            'delete'  => $_GET['id'],
             'image' => $_GET['img']
         );
     }

@@ -67,7 +67,7 @@
     <div class="container">
       <div class="gallery">
       <?php
-
+      // Laadt alle cards 
       if(isset($articles))
       {
         foreach($articles as $article){
@@ -77,6 +77,8 @@
               <p>Periode ".$article['period']."</p>
               <p>Les: ".$article['content']['info']['les']."</p>
               <img src='". select_item_first($article['content']['items'], 'img', 'img'). "' alt='image' />
+              <p>Gebruiker: ".$article['publisher']['name']."</p>
+              <p>Klas: ".$article['publisher']['class']."</p>
             </a>
           </div>";
         }

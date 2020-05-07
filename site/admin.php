@@ -27,6 +27,7 @@ if($user['role']>2){
       include('utils/destroy_lesson.php');
       include('utils/get_users.php');
       include('utils/upgrade_users.php');
+      include('utils/downgrade_users.php');
       include('utils/api_connect.php');
       $miscs = $api['miscs'];
     ?>

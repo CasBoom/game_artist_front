@@ -69,7 +69,7 @@ $miscs = $api['miscs'];
         echo "<a href='article.php?id=".$_GET['id']."&delete=1'>
                 Delete
             </a><br>";
-        echo "<a href='http://bitbenders.gluweb.nl/game_artist/upload.php?a=".$_GET['id']."'>
+        echo "<a href='upload.php?a=".$_GET['id']."'>
                 Upload
             </a>";
 
@@ -87,7 +87,7 @@ $miscs = $api['miscs'];
                 echo "
                 <div class='project-image'>
                     <img src='".$item['img']."' alt='p-img' width='100%'>
-                    <a href='http://bitbenders.gluweb.nl/game_artist/mainpage/article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
+                    <a href='article.php?id=".$_GET['id']."&deleteimg=1&img=".$item['id']."'>
                         Delete
                     </a>
                 </div>
@@ -96,7 +96,7 @@ $miscs = $api['miscs'];
                 echo "
                 <div class='project-info'>
                     <p>".$item['txt']."</p>
-                    <a href='http://bitbenders.gluweb.nl/game_artist/mainpage/article.php?id=".$_GET['id']."&deletetxt=1&txt=".$item['id']."'>
+                    <a href='article.php?id=".$_GET['id']."&deletetxt=1&txt=".$item['id']."'>
                         Delete
                     </a>
                 </div>

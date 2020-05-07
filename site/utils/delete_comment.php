@@ -6,7 +6,7 @@ if(isset($_POST['delete_comment'])&&isset($_POST['comment_id']))
     {
         $auth_data = array(
             'token'   => $_SESSION['token'],
-            'delete'  => '1',
+            'delete'  => $_GET['id'],
             'comment' => $_POST['comment_id']
         );
     }

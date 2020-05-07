@@ -4,13 +4,36 @@
         </div>
     </a>
     <?php
+    // sorry
             if(isset($index)){
-                echo "
-                <div class='filter'>
-                <form  action='' method='get'>
-                    <input type='text' name='filter'>
-                    <input type='submit'>
-                </form>
+                echo '<div class="filter">
+                    <form  action="" method="get">
+                        Les: <select id="les" name="f_klas" required>
+                            <option value=""  required></option >';
+                            foreach($miscs["lessons"] as $les)
+                            {
+                            echo "<option value='".$les['id']."'  required>".$les['lesson']."</option >";
+                            }
+                    echo '</select required> 
+                    Periode: <select id="periode" name="period" required>
+                        <option value=""  required></option >';
+                        for($i = 1; $i<=16; $i++)
+                        {
+                        echo "<option value='$i'> Periode $i</option>";
+                        }
+                    echo '</select required>';
+                    echo "
+                        Tag: 
+                        <select name='tag_add'>
+                            <option value=''  required></option >";
+                            foreach($miscs['tags'] as $tag)
+                            {
+                                echo "<option value='".$tag['id']."'>".$tag['tag']."</option>";
+                            }
+                            echo "
+                        </select required>
+                        <input type='submit'>
+                    </form>
                 </div>
                 ";
             }
@@ -21,58 +44,6 @@
         
     <a href="?logout" class="cool_button logout">Logout</a>
 </header>
-<style>
-    .filter{
-        display:inline-block;
-        margin-top:55px;
-        margin-left:5%;
-    }
-
-    header{
-        width:100%;
-        height:120px;
-        border-bottom:1px solid #c9c9c9;
-    }
-    
-    .glu_logo_wrapper{
-        margin-left:100px;
-        float:left;
-        width:360px;
-    }
-
-    header .glu_logo{
-        height:120px;
-        width:360px;
-        background-image:url('img/logo.png');
-        background-position:center;
-        background-repeat:no-repeat;
-    }
-
-    a{
-        text-decoration:none;
-    }
-
-    header .cool_button{
-        padding:10px;
-        float:right;
-        margin-right:25px;
-        border-radius:15px;
-        margin-top:45px;
-        width:5%;
-        min-width:80px;
-        color:#fff;
-        font-weight:bold;
-        text-align:center;
-    }
-
-    header .logout{
-        background-color:#f00;
-    }
-
-    header .admin{
-        background-color:#494;
-    }
-</style>
 <?php
     if(isset($_GET['logout']))
     {

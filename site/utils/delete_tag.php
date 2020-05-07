@@ -6,7 +6,7 @@ if(isset($_POST['delete_tag']))
     {
         $auth_data = array(
             'token'   => $_SESSION['token'],
-            'delete'  => '1',
+            'delete'  => $_GET['id'],
             'tag' => $_POST['delete_tag']
         );
     }
