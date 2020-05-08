@@ -25,7 +25,7 @@ if(isset($_SESSION['token']))
         }else{
             $api = json_decode($result, true);
             $article = $api['article_id'];
-            header('Location: upload.php?a='.$article);
+            header('Location: ../upload.php?a='.$article);
         }
         curl_close($curl);
         

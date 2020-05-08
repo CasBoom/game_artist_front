@@ -61,7 +61,7 @@ if(isset($_GET['logout']))
     <?php
       include('header.php');
     ?>
-        <form  enctype="multipart/form-data" class="file-upload" method="post" action="upload_image.php">
+        <form  enctype="multipart/form-data" class="file-upload" method="post" action="utils/upload_image.php">
             <h1 class="title-upload-form">Upload hier je afbeeldingen</h1>
             <input type="text" value="<?php echo $_GET['a']; ?>" name="project_id" hidden>
             <div class="image-upload-wrap">
@@ -81,7 +81,7 @@ if(isset($_GET['logout']))
             </div>
         </form>
 
-        <form class="text-upload" method="post" action="upload_text.php">
+        <form class="utils/text-upload" method="post" action="upload_text.php">
             <input type="text" value="<?php echo $_GET['a']; ?>" name="project_id" hidden>
             <div class="input-fields">
                 <input required type="text" class="text-field-upload" name="text">

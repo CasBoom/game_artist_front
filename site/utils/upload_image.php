@@ -70,5 +70,5 @@ if(isset($_FILES['image'])){
         }
     }
 }
-header('Location: article.php?id='.$_POST['project_id'].'&error=filesize'); 
+header('Location: ../article.php?id='.$_POST['project_id'].'&error=filesize'); 
 ?>

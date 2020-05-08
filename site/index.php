@@ -39,7 +39,7 @@
           <h1 class="main_name"><?php echo $user['name']; ?></h1>
           <p class="main">E-mail</p><p class="after_main"><?php echo $user['username']; ?></p>
           <p class="main">Klas</p><p class="after_main"><?php echo $user['class']; ?></p>
-          <form action="upload_index.php" method="post">
+          <form action="utils/upload_index.php" method="post">
             Les<br>
             <select id="les" name="klas" required>
               <?php
