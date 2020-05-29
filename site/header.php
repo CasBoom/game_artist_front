@@ -8,24 +8,25 @@
             if(isset($index)){
                 echo '<div class="filter">
                     <form  action="" method="get">
-                        Les: <select id="les" name="f_klas" required>
+                    Periode: <select id="periode" name="f_period">
+                        <option value=""></option >';
+                        for($i = 1; $i<=16; $i++)
+                        {
+                        echo "<option value='$i'> Periode $i</option>";
+                        }
+                        echo '</select>';
+                    echo '
+                        Les: <select id="les" name="f_klas">
                             <option value=""  required></option >';
                             foreach($miscs["lessons"] as $les)
                             {
                             echo "<option value='".$les['id']."'  required>".$les['lesson']."</option >";
                             }
-                    echo '</select required> 
-                    Periode: <select id="periode" name="period" required>
-                        <option value=""  required></option >';
-                        for($i = 1; $i<=16; $i++)
-                        {
-                        echo "<option value='$i'> Periode $i</option>";
-                        }
-                    echo '</select required>';
+                    echo '</select>';
                     echo "
                         Tag: 
-                        <select name='tag_add'>
-                            <option value=''  required></option >";
+                        <select name='filter'>
+                            <option value=''  ></option >";
                             foreach($miscs['tags'] as $tag)
                             {
                                 echo "<option value='".$tag['id']."'>".$tag['tag']."</option>";

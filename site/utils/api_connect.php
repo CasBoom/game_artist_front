@@ -32,9 +32,9 @@ if(isset($_GET['id'])){
     curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?article&tags&id='.$_GET['id']);
 }
 else{
-    if(isset($_GET['filter']))
+    if(isset($_GET['filter'])&&isset($_GET['f_klas'])&&isset($_GET['f_period']))
     {
-        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&tags&filter='.$_GET['filter']);
+        curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&tags&filter='.$_GET['filter'].'&f_klas='.$_GET['f_klas'].'&f_period='.$_GET['f_period']);
     }else{
         curl_setopt($curl, CURLOPT_URL, 'http://bitbenders.gluweb.nl/api/?articles&tags');
     }

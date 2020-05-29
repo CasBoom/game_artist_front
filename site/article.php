@@ -133,13 +133,19 @@ $miscs = $api['miscs'];
         }
     }
     ?>
-    <h3>Comment</h3>
-    <form method="post" action="">
-        Comment :<textarea name="comment" required></textarea><br>
-        Rating: <input type="number" name="rating" max="10" min="0" required><br>
-        <input type="submit">
-    </form>
+    <?php
+    // comment field
+    if($user['role']!=3){
+        echo'<h3>Comment</h3>
+        <form method="post" action="">
+            Comment :<textarea name="comment" required></textarea><br>
+            Rating: <input type="number" name="rating" max="10" min="0" required><br>
+            <input type="submit">
+        </form>';
+    }
+    ?>
     <div class="comments_field">
+        <h2>Beoordelingen</h2>
         <?php
         foreach($article['content']['comments'] as $comment){
             echo "
